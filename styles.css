@@ -3099,7 +3099,7 @@ footer {
 .messageSubmitBtn:disabled {
   background-color: #b8b8b8;
   color: #f5f5f5;
-  opacity: 0.7;
+  opacity: 0.9;
   cursor: not-allowed;
   box-shadow: none;
 }
@@ -3125,6 +3125,25 @@ footer {
 .messageSubmitBtn:not(:disabled):active {
   transform: translateY(0);
 }
+
+.buttonSpinner {
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  margin-right: .7rem;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  vertical-align: -0.15em;
+  animation: buttonSpinnerRotate .75s linear infinite;
+}
+
+@keyframes buttonSpinnerRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .secureNote {
   display: flex;
   align-items: center;

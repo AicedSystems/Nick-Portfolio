@@ -367,6 +367,13 @@ const contactForm = document.querySelector(".contactForm");
 const formMessage = document.querySelector(".formMessage");
 
 function submitContactRequest(contactData, messageElement, formElement) {
+  const submitButton = formElement.querySelector('button[type="submit"]');
+  const originalButtonHTML = submitButton ? submitButton.innerHTML : "";
+
+  if (submitButton) {
+    submitButton.disabled = true;
+    submitButton.innerHTML = '<span class="buttonSpinner" aria-hidden="true"></span><span>Sending...</span>';
+  }
 
   fetch("https://agentarmijo-api.onrender.com/api/contact", {
     method: "POST",
@@ -393,6 +400,12 @@ function submitContactRequest(contactData, messageElement, formElement) {
     messageElement.textContent = "Something went wrong. Please try again.";
     messageElement.classList.add("error");
     messageElement.classList.remove("success");
+  })
+  .finally(() => {
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.innerHTML = originalButtonHTML;
+    }
   });
 }
 
