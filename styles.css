@@ -30,6 +30,33 @@ body {
   color: var(--text-color);
 }
 
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 4000;
+  padding: 1rem 1.5rem;
+  background: var(--text-color);
+  color: var(--second-bg-color);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 header {
   position: fixed;
   width: 100%;
@@ -49,6 +76,9 @@ header {
   font-size: 3rem;
   color: var(--accentcolor);
   display: none;
+  border: 0;
+  background: transparent;
+  line-height: 1;
 }
 
 header.scrolled {
@@ -188,7 +218,7 @@ section {
   margin-top: 1.5rem;
 }
 
-.homeContent h3 {
+.homeContent .heroSubtitle {
   font-size: 3rem;
   line-height: 1.4;
   font-weight: 500;
@@ -498,6 +528,12 @@ h2 i {
 }
 
 .listInfo h3 {
+  font-size: 2.2rem;
+  font-family: "Google Sans", sans-serif;
+  color: var(--accentcolor);
+}
+
+.listingPrice {
   font-size: 2.2rem;
   font-family: "Google Sans", sans-serif;
   color: var(--accentcolor);
@@ -929,7 +965,8 @@ footer {
 }
 
 .footerBottom p,
-.footerBottom a {
+.footerBottom a,
+.footerBottom span {
   font-family: "Google Sans", sans-serif;
   font-size: 1.3rem;
   color: #94a3b8;
@@ -1149,7 +1186,7 @@ footer {
     font-size: 4rem;
   }
 
-  .homeContent h3 {
+  .homeContent .heroSubtitle {
     font-size: 1.8rem;
   }
 
@@ -1296,7 +1333,7 @@ footer {
     font-size: 3.3rem;
   }
 
-  .homeContent h3 {
+  .homeContent .heroSubtitle {
     font-size: 1.6rem;
     line-height: 1.5;
     margin-bottom: 2rem;
@@ -1496,7 +1533,7 @@ footer {
     font-size: 3rem;
   }
 
-  .homeContent h3 {
+  .homeContent .heroSubtitle {
     font-size: 1.45rem;
   }
 

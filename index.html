@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agentarmijo</title>
+    <title>Nick Armijo | Palmdale &amp; Lancaster Real Estate Agent</title>
+    <meta name="description" content="Nick Armijo helps buyers, sellers, and real estate investors in Palmdale, Lancaster, Santa Clarita, and surrounding Antelope Valley communities.">
+    <link rel="canonical" href="https://agentarmijo.com/">
+    <meta property="og:title" content="Nick Armijo | Palmdale &amp; Lancaster Real Estate Agent">
+    <meta property="og:description" content="Local real estate guidance for buying, selling, and investing in Palmdale, Lancaster, Santa Clarita, and surrounding Antelope Valley communities.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agentarmijo.com/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -16,14 +22,15 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="header">
-        <a href="#home" class="logo">
+        <a href="index.html#home" class="logo" aria-label="Nick Armijo Real Estate home">
             Nick Armijo
             <span class="logoSpan">Real Estate</span>
             <span class="dreNumber">DRE 02208540</span>
         </a>
-        <nav class="navbar">
-            <a href="#home">Home</a>
+        <nav class="navbar" id="primary-navigation" aria-label="Primary navigation">
+            <a href="index.html#home" aria-current="page">Home</a>
             <a href="listings.html">Listings</a>
             <a href="services.html">Services</a>
             <a href="blog.html">Blog</a>
@@ -31,9 +38,10 @@
             <a href="contact.html">Contact</a>
         </nav>
         <a href="contact.html" class="contactBtn" data-open-modal>Contact Me</a>
-        <i class="fa-solid fa-bars" id="menu-icon"></i>
+        <button class="fa-solid fa-bars" id="menu-icon" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false"></button>
 
     </header>
+    <main id="main-content" tabindex="-1">
     <!-- //////////////////HERO//////////////////-->
     <section class="home" id="home">
         <div class="homeContent">
@@ -41,8 +49,8 @@
                 Find Their
                 <span>Perfect Home</span>
             </h1>
-            <h3>Your trusted real estate expert in Lancaster
-                Palmdale & surrounding areas.</h3>
+            <p class="heroSubtitle">Your trusted real estate expert in Lancaster,
+                Palmdale &amp; surrounding areas.</p>
 
             <div class="homeBtns">
                 <a href="listings.html" class="primary-btn">View Listings<i class="fa-solid fa-arrow-right"></i> </a>
@@ -68,18 +76,18 @@
                 <h3 class="callOut">Connect With Me On Social Media</h3>
                 <p class="socialText">Follow for listings, market updates, and local real estate tips.</p>
             </div>
-            <div class="socialIcons">
-                <a href="https://www.instagram.com/agentarmijo/">
-                    <i class="fa-brands fa-instagram"></i>
+            <div class="socialIcons" aria-label="Nick Armijo on social media">
+                <a href="https://www.instagram.com/agentarmijo/" aria-label="Follow Nick Armijo on Instagram">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                 </a>
-                <a href="https://www.facebook.com/people/Nick-Armijo/100089810234481/">
-                    <i class="fa-brands fa-square-facebook"></i>
+                <a href="https://www.facebook.com/people/Nick-Armijo/100089810234481/" aria-label="Follow Nick Armijo on Facebook">
+                    <i class="fa-brands fa-square-facebook" aria-hidden="true"></i>
                 </a>
-                <a href="https://www.tiktok.com/@agentarmijo?is_from_webapp=1&sender_device=pc">
-                    <i class="fa-brands fa-tiktok"></i>
+                <a href="https://www.tiktok.com/@agentarmijo?is_from_webapp=1&sender_device=pc" aria-label="Follow Nick Armijo on TikTok">
+                    <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
                 </a>
-                <a href="https://www.youtube.com/@agentarmijo">
-                    <i class="fa-brands fa-youtube"></i>
+                <a href="https://www.youtube.com/@agentarmijo" aria-label="Visit Nick Armijo on YouTube">
+                    <i class="fa-brands fa-youtube" aria-hidden="true"></i>
                 </a>
             </div>
 
@@ -100,11 +108,12 @@
             <article class="listingInfo">
                 <button class="listingCard listingCardButton" type="button" data-listing-id="center-ct">
                     <div class="listingImg">
-                        <img src="assets/images/listings/1629 Center Ct Listings.webp" alt="Home In CalCity For Sale">
+                        <img src="assets/images/listings/1629 Center Ct Listings.webp" alt="Exterior of 1629 Centre Ct in Palmdale, California">
                         <span class="tag">For Sale</span>
                     </div>
                     <div class="listInfo">
-                        <h3>$549,900</h3>
+                        <h3 class="visually-hidden">1629 Centre Ct</h3>
+                        <p class="listingPrice">$549,900</p>
                         <div class="location">
                             <p class="bigP">1629 Centre Ct</p>
                             <p class="lilP">Palmdale, CA 93551</p>
@@ -122,11 +131,12 @@
             <article class="listingInfo">
                 <button class="listingCard listingCardButton" type="button" data-listing-id="danya-ln">
                 <div class="listingImg">
-                    <img src="assets/images/listings/44237 Danya Ln/44237 Danya Ln Listing.webp" alt="Home In Palmdale For Sale">
+                    <img src="assets/images/listings/44237 Danya Ln/44237 Danya Ln Listing.webp" alt="Exterior of 44237 Danya Ln in Lancaster, California">
                     <span class="tag">For Sale</span>
                 </div>
                 <div class="listInfo">
-                    <h3>$460,000</h3>
+                    <h3 class="visually-hidden">44237 Danya Ln</h3>
+                    <p class="listingPrice">$460,000</p>
                     <div class="location">
                         <p class="bigP">44237 Danya Ln</p>
                         <p class="lilP">Lancaster, CA 93536</p>
@@ -145,11 +155,12 @@
             <article class="listingInfo">
                 <button class="listingCard listingCardButton" type="button" data-listing-id="joshua-hills">
                 <div class="listingImg">
-                    <img src="assets/images/listings/2614 Joshua Hills/finalhome.webp" alt="Home In JoshuaTree For Sale">
+                    <img src="assets/images/listings/2614 Joshua Hills/finalhome.webp" alt="Exterior of 2614 Joshua Hills Drive in Palmdale, California">
                     <span class="tag">For Sale</span>
                 </div>
                 <div class="listInfo">
-                    <h3>$519,999</h3>
+                    <h3 class="visually-hidden">2614 Joshua Hills Drive</h3>
+                    <p class="listingPrice">$519,999</p>
                     <div class="location">
                         <p class="bigP">2614 Joshua Hills Drive</p>
                         <p class="lilP">Palmdale, CA 93550</p>
@@ -337,6 +348,7 @@
             </article>
         </div>
     </section>
+    </main>
     <!-- /////////////////FOOOTER/////////// -->
     <footer id="contact">
         <section class="ctaBanner">
@@ -372,7 +384,7 @@
             
             </div>
     
-            <nav class="footerLinks">
+            <nav class="footerLinks" aria-label="Footer navigation">
                 <h3>Quick Links</h3>
     
                 <a href="index.html#home">Home</a>
@@ -385,10 +397,9 @@
             <div class="footerResources">
                 <h3>Resources</h3>
     
-                <a href="#">Buying Guide</a>
-                <a href="#">Selling Guide</a>
-                <a href="#">Market Insights</a>
-                <a href="#">FAQ</a>
+                <a href="buy.html">Buying Guide</a>
+                <a href="sell.html">Selling Guide</a>
+                <a href="blog.html">Market Insights</a>
             </div>
     
             <address class="footerContact">
@@ -409,67 +420,71 @@
             <p>© 2026 Nick Armijo Real Estate</p>
     
             <div>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
+                <span>Privacy Policy</span>
+                <span>Terms of Service</span>
             </div>
         </section>
     </footer>
     <!-- ///////////////MODAL//////// -->
-    <div class="contactModal" id="contactModal">
+    <div class="contactModal" id="contactModal" aria-hidden="true">
         <div class="modalOverlay" data-close-modal></div>
       
-        <div class="modalBox">
-          <button class="modalClose" type="button" data-close-modal>
-            <i class="fa-solid fa-xmark"></i>
+        <div class="modalBox" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle" aria-describedby="contactModalDescription" tabindex="-1">
+          <button class="modalClose" type="button" data-close-modal aria-label="Close contact form">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
           </button>
       
-          <h2>Let’s Talk</h2>
-          <p>Send a quick message and I’ll get back to you soon.</p>
+          <h2 id="contactModalTitle">Let’s Talk</h2>
+          <p id="contactModalDescription">Send a quick message and I’ll get back to you soon.</p>
       
           <form class="modalForm">
-            <input type="text" name="fullName" placeholder="Full Name">
-            <input type="tel" name="phone" placeholder="Phone">
-            <input type="email" name="email" placeholder="Email Address">
+            <label class="visually-hidden" for="modalFullName">Full name</label>
+            <input id="modalFullName" type="text" name="fullName" placeholder="Full Name" autocomplete="name">
+            <label class="visually-hidden" for="modalPhone">Phone</label>
+            <input id="modalPhone" type="tel" name="phone" placeholder="Phone" autocomplete="tel">
+            <label class="visually-hidden" for="modalEmail">Email address</label>
+            <input id="modalEmail" type="email" name="email" placeholder="Email Address" autocomplete="email">
             <input type="hidden" name="interest" value="general">
-            <textarea name="message" placeholder="How can I help?"></textarea>
+            <label class="visually-hidden" for="modalMessage">How can Nick help?</label>
+            <textarea id="modalMessage" name="message" placeholder="How can I help?"></textarea>
       
             <button type="submit" class="primary-btn">Send Message</button>
-            <p class="modalFormMessage"></p>
+            <p class="modalFormMessage" aria-live="polite"></p>
           </form>
         </div>
       </div>
         
       <!-- //////////////LISTINGS MODAL//////////// -->
-      <div class="listingModal" id="listingModal">
+      <div class="listingModal" id="listingModal" aria-hidden="true">
         <div class="listingModalOverlay" data-close-listing-modal></div>
 
-        <div class="listingModalBox">
-            <button class="listingModalClose" type="button" data-close-listing-modal>
-                <i class="fa-solid fa-xmark"></i>
+        <div class="listingModalBox" role="dialog" aria-modal="true" aria-labelledby="listingModalTitle" aria-describedby="listingModalAddress" tabindex="-1">
+            <button class="listingModalClose" type="button" data-close-listing-modal aria-label="Close listing details">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
             </button>
 
             <div class="listingModalGrid">
                 <div class="listingModalMain">
                     <div class="listingModalImageWrap">
-                        <button class="galleryPrev" type="button">
+                        <button class="galleryPrev" type="button" aria-label="Show previous listing photo">
                             <i class="fa-solid fa-chevron-left"></i>
                         </button>
 
                         <img class="listingModalImage" src="" alt="">
                         <span class="listingModalStatus"></span>
 
-                        <button class="galleryCount" type="button">
+                        <span class="galleryCount" aria-label="Listing photo count">
                             <i class="fa-regular fa-image"></i>
                             <span class="galleryCurrent">1</span> /
                             <span class="galleryTotal">1</span>
-                        </button>
-                        <button class="galleryNext" type="button">
+                        </span>
+                        <button class="galleryNext" type="button" aria-label="Show next listing photo">
                             <i class="fa-solid fa-chevron-right"></i>
                         </button>
                     </div>
 
-                    <h2 class="listingModalPrice"></h2>
-                    <p class="listingModalAddress"></p>
+                    <h2 class="listingModalPrice" id="listingModalTitle"></h2>
+                    <p class="listingModalAddress" id="listingModalAddress"></p>
 
                     <div class="listingModalStats">
                         <div>
@@ -538,19 +553,19 @@
                             <h3>Share This Listing</h3>
 
                             <div class="shareLinks">
-                                <a href="https://www.instagram.com/agentarmijo/">
-                                    <i class="fa-brands fa-instagram"></i>
+                                <a href="https://www.instagram.com/agentarmijo/" aria-label="Visit Nick Armijo on Instagram">
+                                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://www.facebook.com/people/Nick-Armijo/100089810234481/">
-                                    <i class="fa-brands fa-square-facebook"></i>
+                                <a href="https://www.facebook.com/people/Nick-Armijo/100089810234481/" aria-label="Visit Nick Armijo on Facebook">
+                                    <i class="fa-brands fa-square-facebook" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://www.tiktok.com/@agentarmijo?is_from_webapp=1&sender_device=pc">
-                                    <i class="fa-brands fa-tiktok"></i>
+                                <a href="https://www.tiktok.com/@agentarmijo?is_from_webapp=1&sender_device=pc" aria-label="Visit Nick Armijo on TikTok">
+                                    <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://www.youtube.com/@agentarmijo">
-                                    <i class="fa-brands fa-youtube"></i>
+                                <a href="https://www.youtube.com/@agentarmijo" aria-label="Visit Nick Armijo on YouTube">
+                                    <i class="fa-brands fa-youtube" aria-hidden="true"></i>
                                 </a>
-                                <button type="button"><i class="fa-solid fa-link"></i></button>
+                                <button type="button" aria-label="Copy listing link"><i class="fa-solid fa-link" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
@@ -560,7 +575,7 @@
                     <section class="modalSection">
                         <h3>About This Property</h3>
                         <p class="listingModalDescription"></p>
-                        <button type="button" class="descriptionToggleBtn">
+                        <button type="button" class="descriptionToggleBtn" aria-expanded="false">
                             <span>
                                 Read More
                             </span>

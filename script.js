@@ -3,10 +3,23 @@ const menuIcon = document.querySelector("#menu-icon");
 const navbar = document.querySelector(".navbar")
 const header = document.querySelector(".header")
 
-menuIcon.addEventListener("click", () => {
-  navbar.classList.toggle("active")
-  menuIcon.classList.toggle("fa-xmark");
-});
+if (menuIcon && navbar) {
+  menuIcon.addEventListener("click", () => {
+    const isOpen = navbar.classList.toggle("active");
+    menuIcon.classList.toggle("fa-xmark", isOpen);
+    menuIcon.setAttribute("aria-expanded", String(isOpen));
+    menuIcon.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+  });
+
+  navbar.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navbar.classList.remove("active");
+      menuIcon.classList.remove("fa-xmark");
+      menuIcon.setAttribute("aria-expanded", "false");
+      menuIcon.setAttribute("aria-label", "Open navigation menu");
+    });
+  });
+}
 
 window.addEventListener("scroll", () => {
   header.classList.toggle("scrolled", window.scrollY > 50);
@@ -570,19 +583,35 @@ const modalFormMessage = document.querySelector(".modalFormMessage");
 
 const openModalBtns = document.querySelectorAll("[data-open-modal]");
 const closeModalBtns = document.querySelectorAll("[data-close-modal]");
+let lastContactModalTrigger = null;
+
+function setContactModalState(isOpen, trigger = null) {
+  if (!modal) return;
+
+  modal.classList.toggle("active", isOpen);
+  modal.setAttribute("aria-hidden", String(!isOpen));
+
+  if (isOpen) {
+    lastContactModalTrigger = trigger || document.activeElement;
+    modal.querySelector(".modalClose").focus();
+  } else if (lastContactModalTrigger) {
+    lastContactModalTrigger.focus();
+    lastContactModalTrigger = null;
+  }
+}
 
 if (modal) {
 
   openModalBtns.forEach((btn) => {
     btn.addEventListener("click", (event) => {
       event.preventDefault();
-      modal.classList.add("active");
+      setContactModalState(true, btn);
     });
   });
   
   closeModalBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
-      modal.classList.remove("active");
+      setContactModalState(false);
     });
   });
 }
@@ -964,6 +993,22 @@ const galleryTotal = document.querySelector(".galleryTotal");
 
 const descriptionToggleBtn = document.querySelector(".descriptionToggleBtn");
 const descriptionToggleText = document.querySelector(".descriptionToggleBtn span");
+let lastListingModalTrigger = null;
+
+function setListingModalState(isOpen, trigger = null) {
+  if (!listingModal) return;
+
+  listingModal.classList.toggle("active", isOpen);
+  listingModal.setAttribute("aria-hidden", String(!isOpen));
+
+  if (isOpen) {
+    lastListingModalTrigger = trigger || document.activeElement;
+    listingModal.querySelector(".listingModalClose").focus();
+  } else if (lastListingModalTrigger) {
+    lastListingModalTrigger.focus();
+    lastListingModalTrigger = null;
+  }
+}
 
 
 if (listingModal) {
@@ -1003,6 +1048,7 @@ if (listingModal) {
       descriptionToggleBtn.hidden = listing.description.length <= 150;
       descriptionToggleText.textContent = "Read More";
       descriptionToggleBtn.classList.remove("expanded");
+      descriptionToggleBtn.setAttribute("aria-expanded", "false");
 
       modalHighlights.innerHTML = "";
 
@@ -1015,7 +1061,7 @@ if (listingModal) {
       updateGalleryImage();
       modalImage.alt = listing.address;
 
-      listingModal.classList.add("active");
+      setListingModalState(true, card);
 
     });
   });
@@ -1038,18 +1084,20 @@ if (listingModal) {
         modalDescription.textContent = activeDescription;
         descriptionToggleText.textContent = "Show Less";
         descriptionToggleBtn.classList.add("expanded");
+        descriptionToggleBtn.setAttribute("aria-expanded", "true");
       }
       else {
         modalDescription.textContent = activeShortDescription;
         descriptionToggleText.textContent = "Read More"
         descriptionToggleBtn.classList.remove("expanded");
+        descriptionToggleBtn.setAttribute("aria-expanded", "false");
       };
     });
   }
 
   closeListingModalBtns.forEach((button) => {
     button.addEventListener("click", () => {
-      listingModal.classList.remove("active");
+      setListingModalState(false);
     });
 
 
@@ -1146,6 +1194,45 @@ if (listingModal) {
       `contact.html?listing=${encodedListingId}&intent=tour#calendarSection`;
   });
 }
+
+function trapFocus(event, dialog) {
+  const focusableElements = dialog.querySelectorAll(
+    'a[href], button:not([disabled]), input:not([type="hidden"]):not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+  );
+  const focusable = Array.from(focusableElements).filter((element) => element.offsetParent !== null);
+
+  if (!focusable.length) return;
+
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+}
+
+document.addEventListener("keydown", (event) => {
+  if (listingModal && listingModal.classList.contains("active")) {
+    if (event.key === "Escape") {
+      setListingModalState(false);
+    } else if (event.key === "Tab") {
+      trapFocus(event, listingModal);
+    }
+    return;
+  }
+
+  if (modal && modal.classList.contains("active")) {
+    if (event.key === "Escape") {
+      setContactModalState(false);
+    } else if (event.key === "Tab") {
+      trapFocus(event, modal);
+    }
+  }
+});
 
 const contactFormHeading = document.querySelector(".contactFormHeading");
 const selectedPropertyPreview = document.querySelector(".selectedPropertyPreview");
