@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact| Nick Armijo Real Estate</title>
+    <title>Contact Nick Armijo | Palmdale &amp; Lancaster Real Estate</title>
+    <meta name="description" content="Contact Nick Armijo for real estate guidance in Palmdale, Lancaster, and the Antelope Valley. Ask a question or request a consultation or property tour.">
+    <link rel="canonical" href="https://agentarmijo.com/contact.html">
+    <meta property="og:title" content="Contact Nick Armijo | Palmdale &amp; Lancaster Real Estate">
+    <meta property="og:description" content="Contact Nick Armijo for real estate guidance in Palmdale, Lancaster, and the Antelope Valley.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agentarmijo.com/contact.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,27 +23,28 @@
 </head>
 
 <body class="contactPage">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="header">
-        <a href="index.html#home" class="logo">
+        <a href="index.html#home" class="logo" aria-label="Nick Armijo Real Estate home">
             Nick Armijo
             <span class="logoSpan">Real Estate</span>
             <span class="dreNumber">DRE 02208540</span>
         </a>
 
-        <nav class="navbar">
+        <nav class="navbar" id="primary-navigation" aria-label="Primary navigation">
             <a href="index.html#home">Home</a>
             <a href="listings.html">Listings</a>
             <a href="services.html">Services</a>
             <a href="blog.html">Blog</a>
             <a href="reviews.html">Reviews</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.html" aria-current="page">Contact</a>
         </nav>
 
         <a href="contact.html" class="contactBtn">Contact Me</a>
-        <i class="fa-solid fa-bars" id="menu-icon"></i>
+        <button class="fa-solid fa-bars" id="menu-icon" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false"></button>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
         <section class="contactHero">
             <div class="contactHeroOverlay"></div>
 
@@ -87,23 +94,23 @@
                     <input type="hidden" class="intentInput" name="intent">
                     <div class="formRow">
                         <div class="formGroup">
-                            <label for="fullName">Full Name</label>
-                            <input type="text" id="fullName" name="fullName" placeholder="Full Name">
+                            <label class="visually-hidden" for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Full Name" autocomplete="name">
                         </div>
 
                         <div class="formGroup">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="Email Address">
+                            <label class="visually-hidden" for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Email Address" autocomplete="email">
                         </div>
                     </div>
 
                     <div class="formGroup">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+                        <label class="visually-hidden" for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" autocomplete="tel">
                     </div>
 
                     <div class="formGroup">
-                        <label for="interest">What can I help you with?</label>
+                        <label class="visually-hidden" for="interest">What can I help you with?</label>
                         <select id="interest" name="interest">
                             <option value="">What can I help you with?</option>
                             <option value="buying">Buying a Home</option>
@@ -114,19 +121,19 @@
                     </div>
 
                     <div class="formGroup">
-                        <label for="message">Your Message</label>
+                        <label class="visually-hidden" for="message">Your Message</label>
                         <textarea id="message" name="message" placeholder="Your Message"></textarea>
                     </div>
 
                     <button type="submit" class="messageSubmitBtn" disabled>
-                        Send Message <i class="fa-regular fa-paper-plane"></i>
+                        Send Message <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
                     </button>
 
-                    <p class="formMessage"> Please Fill out Form</p>
+                    <p class="formMessage" aria-live="polite"></p>
 
                     <p class="secureNote">
-                        <i class="fa-solid fa-lock"></i>
-                        Your information is secure and will never be shared.
+                        <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                        Your information will be handled with care.
                     </p>
                 </form>
             </div>
@@ -134,29 +141,29 @@
             <div class="consultationPanel" id="calendarSection">
                 <div class="scheduleTourCard">
                     <div class="scheduleTourIcon">
-                        <i class="fa-regular fa-calendar"></i>
+                        <i class="fa-regular fa-calendar" aria-hidden="true"></i>
                     </div>
 
-                    <h2>Schedule a Tour</h2>
+                    <h2>Request a Consultation or Tour</h2>
                     <p>
                         Book a free, no-obligation call to discuss your real estate goals.
                     </p>
-                    <button type="button" class="openCalendarBtn">
-                        <i class="fa-regular fa-calendar"></i>
-                        Pick a Date & Time
+                    <button type="button" class="openCalendarBtn" aria-controls="calendarPreference" aria-expanded="false">
+                        <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                        Choose a Preferred Date &amp; Time
                       </button>
                   
                     
-                    <div class="calendarBox tourCalendarSection" hidden>
+                    <div class="calendarBox tourCalendarSection" id="calendarPreference" hidden>
                         <div class="calendarHeader">
                             <button type="button" class="prevMonthBtn" aria-label="Previous month">
-                                <i class="fa-solid fa-chevron-left"></i>
+                                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
                             </button>
                             
-                            <h3 class="calendarMonthLabel">June 2026</h3>
+                            <h3 class="calendarMonthLabel" aria-live="polite">June 2026</h3>
                             
                             <button type="button" class="nextMonthBtn" aria-label="Next month">
-                                <i class="fa-solid fa-chevron-right"></i>
+                                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                             </button>
                         </div>
                         
@@ -175,28 +182,28 @@
                         </div>
                         
                         <div class="availableTimes">
-                            <h3>Available Times</h3>
+                            <h3>Preferred Times</h3>
                             
                             <div class="timeGrid">
-                                <button type="button">9:00 AM</button>
-                                <button type="button">11:00 AM</button>
-                                <button type="button">1:00 PM</button>
-                                <button type="button">2:00 PM</button>
-                                <button type="button">4:00 PM</button>
-                                <button type="button">6:00 PM</button>
+                                <button type="button" aria-pressed="false">9:00 AM</button>
+                                <button type="button" aria-pressed="false">11:00 AM</button>
+                                <button type="button" aria-pressed="false">1:00 PM</button>
+                                <button type="button" aria-pressed="false">2:00 PM</button>
+                                <button type="button" aria-pressed="false">4:00 PM</button>
+                                <button type="button" aria-pressed="false">6:00 PM</button>
                             </div>
                         </div>
                         
                         <button type="button" class="bookAppointmentBtn">
-                            Confirm Date & Time <i class="fa-regular fa-calendar-check"></i>
+                            Select Preferred Date &amp; Time <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
                         </button>
-                        <p class="appointmentMessage">Booked?</p>
+                        <p class="appointmentMessage" aria-live="polite"></p>
                     </div>
                     <div class="contactBottom">
 
                         <p class="directCallText">Or call me directly to schedule</p>
                         <a href="tel:6614436441" class="schedulePhone">
-                            <i class="fa-solid fa-phone"></i>
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
                             (661)443-6441
                         </a>
                     </div>
@@ -206,15 +213,15 @@
                         <h2>Why Work With Me?</h2>
                     
                         <div class="whyWorkItem">
-                          <span><i class="fa-solid fa-house-circle-check"></i></span>
+                          <span><i class="fa-solid fa-house-circle-check" aria-hidden="true"></i></span>
                           <div>
                             <h3>Local Market Expert</h3>
-                            <p>Deep knowledge of Granada Hills and surrounding neighborhoods.</p>
+                            <p>Local knowledge of Palmdale, Lancaster, and surrounding Antelope Valley communities.</p>
                           </div>
                         </div>
                     
                         <div class="whyWorkItem">
-                          <span><i class="fa-regular fa-handshake"></i></span>
+                          <span><i class="fa-regular fa-handshake" aria-hidden="true"></i></span>
                           <div>
                             <h3>Strong Negotiator</h3>
                             <p>I work hard to get you the best deal possible.</p>
@@ -222,7 +229,7 @@
                         </div>
                     
                         <div class="whyWorkItem">
-                          <span><i class="fa-regular fa-comment"></i></span>
+                          <span><i class="fa-regular fa-comment" aria-hidden="true"></i></span>
                           <div>
                             <h3>Clear Communication</h3>
                             <p>I keep you informed every step of the way.</p>
@@ -230,7 +237,7 @@
                         </div>
                     
                         <div class="whyWorkItem">
-                          <span><i class="fa-solid fa-shield-heart"></i></span>
+                          <span><i class="fa-solid fa-shield-heart" aria-hidden="true"></i></span>
                           <div>
                             <h3>Client First Approach</h3>
                             <p>Your satisfaction is my top priority.</p>
@@ -247,7 +254,7 @@
             <div class="reachGrid">
                 <article class="reachItem">
                     <div class="reachIcon">
-                        <i class="fa-solid fa-phone"></i>
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
                     </div>
 
                     <div>
@@ -258,7 +265,7 @@
 
                 <article class="reachItem">
                     <div class="reachIcon">
-                        <i class="fa-regular fa-envelope"></i>
+                        <i class="fa-regular fa-envelope" aria-hidden="true"></i>
                     </div>
 
                     <div>
@@ -269,7 +276,7 @@
 
                 <article class="reachItem">
                     <div class="reachIcon">
-                        <i class="fa-solid fa-location-dot"></i>
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                     </div>
 
                     <div>
@@ -281,7 +288,7 @@
 
             <div class="contactBottomCta">
                 <div class="contactBottomIcon">
-                    <img src="assets/images/about/nick_real_estate_home_icon.svg" alt="Home Icon">
+                    <img src="assets/images/about/nick_real_estate_home_icon.svg" alt="">
                 </div>
                 <div class="contactBottomText">
                     <h3>Ready to Buy or Sell?</h3>
@@ -289,11 +296,12 @@
                 </div>
 
                 <a href="contact.html" class="contactBottomBtn">
-                    Let's Talk <i class="fa-solid fa-arrow-right"></i>
+                    Let's Talk <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                 </a>
             </div>
         </section>
         <!-- ..........FOOTER.......... -->
+    </main>
         <footer id="contact">
             <section class="footerContent">
 
@@ -310,23 +318,22 @@
 
                 </div>
 
-                <nav class="footerLinks">
+                <nav class="footerLinks" aria-label="Footer navigation">
                     <h3>Quick Links</h3>
 
-                    <a href="index.html">Home</a>
+                    <a href="index.html#home">Home</a>
                     <a href="listings.html">Listings</a>
                     <a href="about.html">About</a>
                     <a href="services.html">Services</a>
-                    <a href="reviews.html#home">Reviews</a>
+                    <a href="reviews.html">Reviews</a>
                 </nav>
 
                 <div class="footerResources">
                     <h3>Resources</h3>
 
-                    <a href="#">Buying Guide</a>
-                    <a href="#">Selling Guide</a>
-                    <a href="#">Market Insights</a>
-                    <a href="#">FAQ</a>
+                    <a href="buy.html">Buying Guide</a>
+                    <a href="sell.html">Selling Guide</a>
+                    <a href="blog.html">Market Insights</a>
                 </div>
 
                 <address class="footerContact">
@@ -347,13 +354,12 @@
                 <p>© 2026 Nick Armijo Real Estate</p>
 
                 <div>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                    <span>Privacy Policy</span>
+                    <span>Terms of Service</span>
                 </div>
             </section>
 
         </footer>
-    </main>
 
     <script src="script.js"></script>
 </body>
